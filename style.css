@@ -1,0 +1,9 @@
+#output {
+    text-align: center;
+}
+
+#input {
+    width: calc(100% - 2rem);
+    text-align: center;
+    font-size: 2rem;
+}
