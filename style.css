@@ -7,3 +7,37 @@
     text-align: center;
     font-size: 2rem;
 }
+
+iframe {
+    border: none;
+    background-color: transparent;
+    width: calc(50% - 1rem);
+    height: calc(100% - 2rem);
+    display: none;
+}
+
+#calculator {
+    width: calc(50% - 1rem);
+    background-color: transparent;
+    flex-flow: column wrap;
+}
+
+body {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+label, input {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+label {
+    width: calc(50% - 2rem);
+}
+
+#rounding {
+    width: calc(50% - 2rem);
+}

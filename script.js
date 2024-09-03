@@ -1,8 +1,8 @@
 window.onload = function () {
-    mathPlus.settings.rounding = 10;
+    mathPlus.settings.rounding = 5;
 }
 
-document.getElementById("input").oninput = function (event) {
+function evaluateInput() {
     let newOutput = Function(`return ${document.getElementById("input").value}`)();
     if (newOutput === undefined || newOutput === null) {
         document.getElementById("output").innerHTML = "...";
@@ -10,3 +10,12 @@ document.getElementById("input").oninput = function (event) {
         document.getElementById("output").innerHTML = mathPlus.roundToPlaces(newOutput);
     }
 }
+
+document.getElementById("input").oninput = function (event) {
+    evaluateInput();
+}
+
+document.getElementById("rounding").oninput = function (event) {
+    mathPlus.settings.rounding = +document.getElementById("rounding").value;
+    evaluateInput();
+} 
