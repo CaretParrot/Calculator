@@ -2,22 +2,16 @@
     text-align: center;
 }
 
+body > * {
+    width: calc(50% - 1rem);
+}
+
 #input {
-    width: calc(100% - 2rem);
     text-align: center;
     font-size: 2rem;
 }
 
-iframe {
-    border: none;
-    background-color: transparent;
-    width: calc(50% - 1rem);
-    height: calc(100% - 2rem);
-    display: none;
-}
-
 #calculator {
-    width: calc(50% - 1rem);
     background-color: transparent;
     flex-flow: column wrap;
 }
@@ -32,12 +26,4 @@ label, input {
     justify-content: center;
     align-items: center;
     align-content: center;
-}
-
-label {
-    width: calc(50% - 2rem);
-}
-
-#rounding {
-    width: calc(50% - 2rem);
 }
