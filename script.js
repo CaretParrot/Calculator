@@ -1,4 +1,5 @@
 mathPlus.settings.rounding = 5;
+document.getElementById("input").focus();
 
 function evaluateInput() {
     let newOutput = Function(`return ${document.getElementById("input").value}`)();
