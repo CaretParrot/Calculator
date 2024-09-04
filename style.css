@@ -12,13 +12,20 @@ body > * {
 }
 
 #calculator {
-    background-color: transparent;
     flex-flow: column wrap;
 }
 
 body {
     display: flex;
     flex-flow: row wrap;
+}
+
+#settings {
+    display: none;
+}
+
+.page {
+    background-color: transparent;
 }
 
 label, input {

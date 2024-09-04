@@ -1,6 +1,4 @@
-window.onload = function () {
-    mathPlus.settings.rounding = 5;
-}
+mathPlus.settings.rounding = 5;
 
 function evaluateInput() {
     let newOutput = Function(`return ${document.getElementById("input").value}`)();
@@ -26,5 +24,5 @@ function switchPage(id, sharedClass) {
         allPages[i].style.display = "none";
     }
 
-    document.getElementById(id).display = "flex";
+    document.getElementById(id).style.display = "flex";
 }
