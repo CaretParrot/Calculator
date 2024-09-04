@@ -11,10 +11,6 @@ body > * {
     font-size: 2rem;
 }
 
-#calculator {
-    flex-flow: column wrap;
-}
-
 body {
     display: flex;
     flex-flow: row wrap;
@@ -26,6 +22,7 @@ body {
 
 .page {
     background-color: transparent;
+    flex-flow: column wrap;
 }
 
 label, input {
