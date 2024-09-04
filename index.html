@@ -14,11 +14,15 @@
     </head>
 
     <body>
-        <div id="calculator">
+        <div id="calculator" class="page">
             <h1 id="output">...</h1>
             <input id="input" autocomplete="false">
+            <button onclick="switchPage('settings', 'page')">Settings</button>
+        </div>
+        <div id="settings" class="page">
             <label>Rounding:</label>
             <input id="rounding" autocomplete="false" value="5" type="number" min="0" max="16">
+            <button onclick="switchPage('calculator', 'page')">Back</button>
         </div>
     </body>
 

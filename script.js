@@ -19,3 +19,12 @@ document.getElementById("rounding").oninput = function (event) {
     mathPlus.settings.rounding = +document.getElementById("rounding").value;
     evaluateInput();
 } 
+
+function switchPage(id, sharedClass) {
+    allPages = document.getElementsByClassName(sharedClass);
+    for (let i = 0; i < allPages.length; i++) {
+        allPages[i].style.display = "none";
+    }
+
+    document.getElementById(id).display = "flex";
+}
