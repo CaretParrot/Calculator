@@ -2,32 +2,48 @@
     text-align: center;
 }
 
-body > * {
-    width: calc(50% - 1rem);
-}
-
 #input {
     text-align: center;
-    font-size: 2rem;
 }
 
 body {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
+}
+
+.page {
+    display: grid;
+    background-color: transparent;
 }
 
 #settings {
     display: none;
+    grid: auto / 50% 50%;
 }
 
-.page {
-    background-color: transparent;
-    flex-flow: column wrap;
-}
-
-label, input {
+label,
+input,
+select,
+option,
+button {
     text-align: center;
     justify-content: center;
-    align-items: center;
     align-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+#history {
+    padding: 1rem;
+    margin: 1rem;
+    align-self: flex-end;
+    height: calc(100% - 2rem);
+}
+
+.page>* {
+    flex: 1 1 auto;
+}
+
+#calculator {
+    grid: auto / 50% 50%;
 }

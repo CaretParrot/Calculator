@@ -1,4 +1,5 @@
 mathPlus.settings.rounding = 5;
+mathPlus.settings.degrees = false;
 document.getElementById("input").focus();
 
 function evaluateInput() {
@@ -17,7 +18,7 @@ document.getElementById("input").oninput = function (event) {
 document.getElementById("rounding").oninput = function (event) {
     mathPlus.settings.rounding = +document.getElementById("rounding").value;
     evaluateInput();
-} 
+}
 
 function switchPage(id, sharedClass) {
     allPages = document.getElementsByClassName(sharedClass);
@@ -25,5 +26,12 @@ function switchPage(id, sharedClass) {
         allPages[i].style.display = "none";
     }
 
-    document.getElementById(id).style.display = "flex";
+    document.getElementById(id).style.display = "grid";
+}
+
+onkeydown = function (event) {
+    if (event.key === "Enter" && document.getElementById("input").value !== "") {
+        document.getElementById("input").value = "";
+        evaluateInput();
+    }
 }

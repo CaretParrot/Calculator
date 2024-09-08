@@ -16,12 +16,18 @@
     <body>
         <div id="calculator" class="page">
             <h1 id="output">...</h1>
+            <div id="history"></div>
             <input id="input" autocomplete="false">
             <button onclick="switchPage('settings', 'page')">Settings</button>
         </div>
         <div id="settings" class="page">
             <label>Rounding:</label>
-            <input id="rounding" autocomplete="false" value="5" type="number" min="0" max="16">
+            <input id="rounding" autocomplete="off" value="5" type="number" min="0" max="16">
+            <label>Angle Type:</label>
+            <select id="angleType">
+                <option value="radians" selected>Radians</option>
+                <option value="degrees">Degrees</option>
+            </select>
             <button onclick="switchPage('calculator', 'page')">Back</button>
         </div>
     </body>
