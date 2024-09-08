@@ -20,6 +20,11 @@ body {
     grid: auto / 50% 50%;
 }
 
+#history {
+    padding: 1rem;
+    margin: 1rem;
+}
+
 label,
 input,
 select,
@@ -30,13 +35,6 @@ button {
     align-content: center;
     align-items: center;
     font-size: 2rem;
-}
-
-#history {
-    padding: 1rem;
-    margin: 1rem;
-    align-self: flex-end;
-    height: calc(100% - 2rem);
 }
 
 .page>* {
@@ -53,4 +51,25 @@ button {
     background-color: transparent;
     padding: 0;
     margin: 0;
+}
+
+@media screen and (max-width: 1080px) {
+    * {
+        font-size: 2rem;
+        padding: 2rem;
+        margin: 2rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    #history {
+        padding: 2rem;
+        margin: 2rem;
+    }
 }
