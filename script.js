@@ -3,6 +3,9 @@ mathPlus.settings.degrees = false;
 document.getElementById("input").focus();
 
 function evaluateInput() {
+    if (document.getElementById("input").value.includes("document")) {
+        document.getElementById("input").value = "";
+    }
     let newOutput = Function(`return ${document.getElementById("input").value}`)();
     if (newOutput === undefined || newOutput === null) {
         document.getElementById("output").innerHTML = "...";
