@@ -20,6 +20,16 @@ document.getElementById("rounding").oninput = function (event) {
     evaluateInput();
 }
 
+document.getElementById("angleType").oninput = function (event) {
+    if (document.getElementById("angleType").value === "degrees") {
+        mathPlus.settings.degrees = true;
+    } else {
+        mathPlus.settings.degrees = false;
+    }
+    
+    evaluateInput();
+}
+
 function switchPage(id, sharedClass) {
     allPages = document.getElementsByClassName(sharedClass);
     for (let i = 0; i < allPages.length; i++) {
