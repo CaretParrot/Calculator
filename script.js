@@ -41,14 +41,14 @@ function switchPage(id, sharedClass) {
 
 onkeydown = function (event) {
     if (event.key === "Enter" && document.getElementById("input").value !== "") {
+        let output = +document.getElementById("output").innerHTML;
         let newButton = document.createElement("button");
-        let buttonText = document.createTextNode(`${document.getElementById("input").value} = ${document.getElementById("output").innerHTML}`);
+        let buttonText = document.createTextNode(`${document.getElementById("input").value} = ${output}`);
         newButton.appendChild(buttonText);
         let onclickNode = document.createAttribute("onclick");
-        onclickNode.value = "navigator.clipboard.writeText(document.getElementById('output').innerHTML)";
+        onclickNode.value = "navigator.clipboard.writeText(output)";
         newButton.setAttributeNode(onclickNode);
         document.getElementById("history").appendChild(newButton);
-
         document.getElementById("input").value = "";
         evaluateInput();
     }
