@@ -2,10 +2,15 @@ mathPlus.settings.rounding = 5;
 mathPlus.settings.degrees = false;
 document.getElementById("input").focus();
 
+const prohibitedFunctions = ["accessKey", "activeElement", "addEventListener", "adoptNode", "alert", "altKey", "anchors", "animationName", "appCodeName", "appendChild()", "applets", "appName", "appVersion", "assert", "assign", "appCodeName", "atob", "attributes", "availHeight", "availWidth", "back", "baseURI", "blur", "body", "break", "btoa", "bubbles", "button", "cancelable", "changeTouches", "characterSet", "charAt", "charCode"];
+
 function evaluateInput() {
-    if (document.getElementById("input").value.includes("document")) {
-        document.getElementById("input").value = "";
+    for (let i = 0; i < prohibitedFunctions.length; i++) {
+        if (document.getElementById("input").value.includes(prohibitedFunctions[i])) {
+            document.getElementById("input").value = "";
+        }
     }
+    
     let newOutput = Function(`return ${document.getElementById("input").value}`)();
     if (newOutput === undefined || newOutput === null) {
         document.getElementById("output").innerHTML = "...";
