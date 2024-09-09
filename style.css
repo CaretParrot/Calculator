@@ -17,7 +17,6 @@ body {
 
 #settings {
     display: none;
-    grid: auto / 50% 50%;
 }
 
 #history {
@@ -41,13 +40,9 @@ button {
     flex: 1 1 auto;
 }
 
-#calculator {
-    grid: auto / 50% 50%;
-}
-
 .grid {
     display: grid !important;
-    grid: auto / 50% 50%;
+    grid: auto / 50% 50% !important;
     background-color: transparent;
     padding: 0;
     margin: 0;
