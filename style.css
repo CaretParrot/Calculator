@@ -49,6 +49,10 @@ button {
     margin: 0;
 }
 
+.historyButton {
+    margin: 0;
+}
+
 @media screen and (max-width: 1080px) {
     * {
         font-size: 2rem;

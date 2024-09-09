@@ -45,9 +45,8 @@ onkeydown = function (event) {
         let newButton = document.createElement("button");
         let buttonText = document.createTextNode(`${document.getElementById("input").value} = ${output}`);
         newButton.appendChild(buttonText);
-        let onclickNode = document.createAttribute("onclick");
-        onclickNode.value = "navigator.clipboard.writeText(output)";
-        newButton.setAttributeNode(onclickNode);
+        newButton.onclick = "navigator.clipboard.writeText(output)";
+        newButton.class = "historyButton";
         document.getElementById("history").appendChild(newButton);
         document.getElementById("input").value = "";
         evaluateInput();
