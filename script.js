@@ -36,7 +36,7 @@ function switchPage(id, sharedClass) {
         allPages[i].style.display = "none";
     }
 
-    document.getElementById(id).style.display = "initial";
+    document.getElementById(id).style.display = "flex";
 }
 
 onkeydown = function (event) {
