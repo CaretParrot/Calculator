@@ -25,6 +25,10 @@ body {
     background-color: transparent;
 }
 
+#history>* {
+    margin: 0;
+}
+
 label,
 input,
 select,

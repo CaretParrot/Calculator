@@ -2,16 +2,8 @@ mathPlus.settings.rounding = 5;
 mathPlus.settings.degrees = false;
 document.getElementById("input").focus();
 
-const prohibitedFunctions = ["accessKey", "activeElement", "addEventListener", "adoptNode", "alert", "altKey", "anchors", "animationName", "appCodeName", "appendChild()", "applets", "appName", "appVersion", "assert", "assign", "appCodeName", "atob", "attributes", "availHeight", "availWidth", "back", "baseURI", "blur", "body", "break", "btoa", "bubbles", "button", "cancelable", "changeTouches", "characterSet", "charAt", "charCode"];
-
 function evaluateInput() {
-    for (let i = 0; i < prohibitedFunctions.length; i++) {
-        if (document.getElementById("input").value.includes(prohibitedFunctions[i])) {
-            document.getElementById("input").value = "";
-        }
-    }
-    
-    let newOutput = Function(`return ${document.getElementById("input").value}`)();
+    let newOutput = Function(`"use strict"; return ${document.getElementById("input").value};`)();
     if (newOutput === undefined || newOutput === null) {
         document.getElementById("output").innerHTML = "...";
     } else {
@@ -50,13 +42,18 @@ function switchPage(id, sharedClass) {
 onkeydown = function (event) {
     if (event.key === "Enter" && document.getElementById("input").value !== "") {
         let output = +document.getElementById("output").innerHTML;
-        let newButton = document.createElement("button");
-        let buttonText = document.createTextNode(`${document.getElementById("input").value} = ${output}`);
-        newButton.appendChild(buttonText);
-        newButton.onclick = "navigator.clipboard.writeText(output)";
-        newButton.class = "historyButton";
-        document.getElementById("history").appendChild(newButton);
+        let newOption = document.createElement("option");
+        let optionText = document.createTextNode(`${document.getElementById("input").value} = ${output}`);
+        newOption.appendChild(optionText);
+        newOption.value = output;
+        newOption.class = "historyOption";
+        newOption.selected = true;
+        document.getElementById("historySelect").appendChild(newOption);
         document.getElementById("input").value = "";
         evaluateInput();
     }
+}
+
+document.getElementById("historySelect").oninput = function (event) {
+    navigator.clipboard.writeText(document.getElementById("historySelect").value);
 }
