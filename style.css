@@ -20,12 +20,11 @@ body {
     display: none;
 }
 
-#history {
-    margin: 1rem;
-    background-color: transparent;
+#history>* {
+    margin: 0;
 }
 
-#history>* {
+#historySelect {
     margin: 0;
 }
 
@@ -50,10 +49,6 @@ button {
     grid: auto / 50% 50% !important;
     background-color: transparent;
     padding: 0;
-    margin: 0;
-}
-
-.historyButton {
     margin: 0;
 }
 
