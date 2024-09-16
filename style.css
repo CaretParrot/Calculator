@@ -20,14 +20,6 @@ body {
     display: none;
 }
 
-#history>* {
-    margin: 0;
-}
-
-#historySelect {
-    margin: 0;
-}
-
 label,
 input,
 select,
