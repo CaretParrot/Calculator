@@ -26,8 +26,8 @@
         </div>
         <div id="settings" class="page">
             <div class="grid">
-                <label title="The number of places the final output will round to. Maximum of 16 allowed, 0 will make numbers round to a whole number, and -1 is no rounding.">Rounding:</label>
-                <input id="rounding" autocomplete="off" value="5" type="number" min="-1" max="16">
+                <label title="The number of decimal places the final output will round to. Maximum of 16 allowed, 0 will make numbers round to a whole number, and 15 is no rounding.">Rounding:</label>
+                <input id="rounding" autocomplete="off" value="5" type="number" min="0" max="15">
                 <label title="Specifies what measurement to use for functions that treat inputs as angles, such as trigonometric functions.">Angle Type:</label>
                 <select id="angleType">
                     <option value="radians" selected>Radians</option>
