@@ -1,11 +1,6 @@
-#output {
+#output, #input {
     text-align: center;
 }
-
-#input {
-    text-align: center;
-}
-
 body {
     display: flex;
     flex-flow: column wrap;
@@ -34,6 +29,10 @@ button {
 
 .page>* {
     flex: 1 1 auto;
+}
+
+#history {
+    margin: 2rem;
 }
 
 .grid {
