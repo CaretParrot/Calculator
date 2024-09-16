@@ -44,11 +44,14 @@ button {
     margin: 0;
 }
 
+#history {
+    padding: 2rem;
+    margin: 2rem;
+}
+
 @media screen and (max-width: 1080px) {
     * {
         font-size: 2rem;
-        padding: 2rem;
-        margin: 2rem;
     }
 
     h1 {
@@ -57,10 +60,5 @@ button {
 
     h2 {
         font-size: 3rem;
-    }
-
-    #history {
-        padding: 2rem;
-        margin: 2rem;
     }
 }
