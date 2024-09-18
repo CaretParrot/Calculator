@@ -44,6 +44,11 @@ textarea {
     margin: 0;
 }
 
+.page {
+    background-color: transparent;
+    flex-flow: column wrap;
+}
+
 @media screen and (max-width: 1080px) {
     * {
         font-size: 2rem;
