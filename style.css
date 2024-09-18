@@ -19,7 +19,8 @@ label,
 input,
 select,
 option,
-button {
+button, 
+textarea {
     text-align: center;
     justify-content: center;
     align-content: center;
