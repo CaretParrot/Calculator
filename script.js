@@ -7,7 +7,7 @@ function evaluateInput() {
     if (newOutput === undefined || newOutput === null) {
         document.getElementById("output").innerHTML = "...";
     } else {
-        document.getElementById("output").innerHTML = mathPlus.roundToPlaces(newOutput);
+        document.getElementById("output").innerHTML = `${mathPlus.roundToPlaces(newOutput)}`;
     }
 }
 
@@ -40,10 +40,10 @@ function switchPage(id, sharedClass) {
 }
 
 onkeydown = function (event) {
-    if (event.key === "Enter" && +document.getElementById("input").value !== "") {
+    if (event.key === "Enter" && document.getElementById("input").value !== "") {
         let output = +document.getElementById("output").innerHTML;
         let newOption = document.createElement("option");
-        let optionText = document.createTextNode(`${+document.getElementById("input").value} = ${output}`);
+        let optionText = document.createTextNode(`${document.getElementById("input").value} = ${output}`);
         newOption.appendChild(optionText);
         newOption.value = output;
         newOption.class = "historyOption";
