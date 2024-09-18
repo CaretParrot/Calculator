@@ -3,7 +3,7 @@ mathPlus.settings.degrees = false;
 document.getElementById("input").focus();
 
 function evaluateInput() {
-    let newOutput = Function(`"use strict"; return ${+document.getElementById("input").innerHTML};`)();
+    let newOutput = Function(`"use strict"; return ${+document.getElementById("input").value};`)();
     if (newOutput === undefined || newOutput === null) {
         document.getElementById("output").innerHTML = "...";
     } else {
@@ -40,10 +40,10 @@ function switchPage(id, sharedClass) {
 }
 
 onkeydown = function (event) {
-    if (event.key === "Enter" && +document.getElementById("input").innerHTML !== "") {
+    if (event.key === "Enter" && +document.getElementById("input").value !== "") {
         let output = +document.getElementById("output").innerHTML;
         let newOption = document.createElement("option");
-        let optionText = document.createTextNode(`${+document.getElementById("input").innerHTML} = ${output}`);
+        let optionText = document.createTextNode(`${+document.getElementById("input").value} = ${output}`);
         newOption.appendChild(optionText);
         newOption.value = output;
         newOption.class = "historyOption";
