@@ -3,7 +3,7 @@ mathPlus.settings.degrees = false;
 document.getElementById("input").focus();
 
 function evaluateInput() {
-    let newOutput = Function(`"use strict"; return ${+document.getElementById("input").value};`)();
+    let newOutput = Function(`"use strict"; return ${document.getElementById("input").value};`)();
     if (newOutput === undefined || newOutput === null) {
         document.getElementById("output").innerHTML = "...";
     } else {
