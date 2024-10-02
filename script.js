@@ -5,7 +5,7 @@ document.getElementById("input").focus();
 
 function evaluateInput() {
     let newOutput = Function(`"use strict"; return ${document.getElementById("input").value};`)();
-    if (+newOutput === undefined || +newOutput === null) {
+    if (+newOutput === undefined || +newOutput === null || isNaN(+newOutput)) {
         document.getElementById("output").innerHTML = "...";
     } else {
         document.getElementById("output").innerHTML = `${mathPlus.roundToPlaces(+newOutput)}`;
