@@ -8,7 +8,7 @@ function evaluateInput() {
     if (+newOutput === undefined || +newOutput === null || isNaN(+newOutput)) {
         document.getElementById("output").innerHTML = "...";
     } else {
-        document.getElementById("output").innerHTML = `${mathPlus.roundToPlaces(+newOutput)}`;
+        document.getElementById("output").innerHTML = `${mathPlus.roundToPlaces(newOutput)}`;
     }
 }
 
