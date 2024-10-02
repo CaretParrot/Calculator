@@ -1,10 +1,11 @@
 mathPlus.settings.rounding = 5;
 mathPlus.settings.degrees = false;
+const regExp = new RegExp("a-zA-Z", "ig");
 document.getElementById("input").focus();
 
 function evaluateInput() {
     let newOutput = Function(`"use strict"; return ${document.getElementById("input").value};`)();
-    if (newOutput === undefined || newOutput === null || newOutput.length > 20) {
+    if (newOutput === undefined || newOutput === null || regExp.test(newOutput)) {
         document.getElementById("output").innerHTML = "...";
     } else {
         document.getElementById("output").innerHTML = `${mathPlus.roundToPlaces(newOutput)}`;
