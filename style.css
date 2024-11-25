@@ -39,7 +39,7 @@ textarea {
 .grid {
     display: grid !important;
     grid: auto / 50% 50% !important;
-    background-color: transparent;
+    background-color: transparent !important;
     padding: 0;
     margin: 0;
 }
@@ -47,18 +47,4 @@ textarea {
 .page {
     background-color: transparent;
     flex-flow: column wrap;
-}
-
-@media screen and (max-width: 1080px) {
-    * {
-        font-size: 2rem;
-    }
-
-    h1 {
-        font-size: 4rem;
-    }
-
-    h2 {
-        font-size: 3rem;
-    }
 }
