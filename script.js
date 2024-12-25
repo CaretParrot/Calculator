@@ -4,21 +4,30 @@ const regExp = new RegExp("a-zA-Z", "ig");
 document.getElementById("input").focus();
 
 function evaluateInput() {
-    let newOutput = Function(`"use strict"; return ${document.getElementById("input").value};`)();
-    if (+newOutput === undefined || +newOutput === null || isNaN(+newOutput) || +newOutput >= 16331239353195370 || Math.abs(+newOutput) === Infinity) {
-        document.getElementById("output").innerHTML = "...";
+    let newOutput;
+
+    try {
+        newOutput = Function(`"use strict"; return ${document.getElementById("input").value};`)();
+    }
+
+    catch (err) {
+        return "...";
+    }
+
+    if (isNaN(+newOutput) || +newOutput >= 16331239353195370) {
+        return "...";
     } else {
-        document.getElementById("output").innerHTML = `${mathPlus.roundToPlaces(newOutput)}`;
+        return `${mathPlus.roundToPlaces(newOutput)}`;
     }
 }
 
 document.getElementById("input").oninput = function (event) {
-    evaluateInput();
+    document.getElementById("output").innerHTML = evaluateInput();
 }
 
 document.getElementById("rounding").oninput = function (event) {
     mathPlus.settings.rounding = +document.getElementById("rounding").value;
-    evaluateInput();
+    document.getElementById("output").innerHTML = evaluateInput();
 }
 
 document.getElementById("angleType").oninput = function (event) {
@@ -42,6 +51,7 @@ function switchPage(id, sharedClass) {
 
 onkeydown = function (event) {
     if (event.key === "Enter" && document.getElementById("input").value !== "") {
+        navigator.clipboard.writeText(evaluateInput(document.getElementById("output").value));
         let output = +document.getElementById("output").innerHTML;
         let newOption = document.createElement("option");
         let optionText = document.createTextNode(`${document.getElementById("input").value} = ${output}`);
@@ -51,7 +61,7 @@ onkeydown = function (event) {
         newOption.selected = true;
         document.getElementById("historySelect").appendChild(newOption);
         document.getElementById("input").value = "";
-        evaluateInput();
+        document.getElementById("output").innerHTML = evaluateInput();
     }
 }
 
