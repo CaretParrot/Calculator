@@ -30,14 +30,14 @@ document.getElementById("rounding").oninput = function (event) {
     document.getElementById("output").innerHTML = evaluateInput();
 }
 
-document.getElementById("angleType").oninput = function (event) {
+document.getElementById("angleType").onchange = function (event) {
     if (document.getElementById("angleType").value === "degrees") {
         mathPlus.settings.degrees = true;
     } else {
         mathPlus.settings.degrees = false;
     }
     
-    evaluateInput();
+    document.getElementById("output").innerHTML = evaluateInput();
 }
 
 function switchPage(id, sharedClass) {
