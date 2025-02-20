@@ -15,17 +15,23 @@
 
     <body>
         <div id="calculator" class="page">
-            <h1 id="output" title='The output of the expression will be displayed here. "..." is shown if the expression does not evaluate properly.'>...</h1>
-            <div id="history">
-                <select id="historySelect" title="The history of your saved equations are shown here. Select an option to copy the output."></select>
-            </div>
-            <input id="input" autocomplete="false" placeholder="Type an expression..." title="Type an expression into this box to evaluate it.">
-            <button onclick="switchPage('settings', 'page')" title="Access settings to change the behavior of the calculator.">Settings</button>
+            <h1 id="output"
+                title='The output of the expression will be displayed here. "..." is shown if the expression does not evaluate properly.'>
+                ...</h1>
+                <select id="historySelect"
+                    title="The history of your saved equations are shown here. Select an option to copy the output."></select>
+            <input id="input" autocomplete="false" placeholder="Type an expression..."
+                title="Type an expression into this box to evaluate it.">
+            <button onclick="switchPage('settings', 'page')"
+                title="Access settings to change the behavior of the calculator.">Settings</button>
         </div>
         <div id="settings" class="page">
-            <label for="rounding" title="The number of decimal places the final output will round to. 0 will make numbers round to a whole number, and 15 is no rounding.">Rounding:</label>
+            <label for="rounding"
+                title="The number of decimal places the final output will round to. 0 will make numbers round to a whole number, and 15 is no rounding.">Rounding:</label>
             <input id="rounding" autocomplete="off" value="5" type="number" min="0" max="15">
-            <label for="angleType" title="Specifies what measurement to use for functions that treat inputs as angles, such as trigonometric functions.">Angle Type:</label>
+            <label for="angleType"
+                title="Specifies what measurement to use for functions that treat inputs as angles, such as trigonometric functions.">Angle
+                Type:</label>
             <select id="angleType">
                 <option value="radians" selected>Radians</option>
                 <option value="degrees">Degrees</option>
@@ -33,4 +39,5 @@
             <button onclick="switchPage('calculator', 'page')">Back</button>
         </div>
     </body>
+
 </html>
